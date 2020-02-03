@@ -1,10 +1,9 @@
 function initialCards(){
-        api.getInitialCards()
+    api.getInitialCards()
         .then((cards) => {
-    const cardList = new CardList(placesList, cards)
-    cardList.render(cards)
+        const cardList = new CardList(placesList, cards)
+        cardList.render(cards)
 })
 }
 
 initialCards();
-

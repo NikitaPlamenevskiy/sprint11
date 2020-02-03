@@ -51,8 +51,3 @@ class Card {
     event.stopPropagation();
   }
 }
-
-
-
-
-

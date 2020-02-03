@@ -50,8 +50,6 @@ class Api {
     .catch(error => alert(error)); 
   }
 }
-
-
 const api = new Api({
   baseUrl: 'http://95.216.175.5/cohort6',
   headers: {
