@@ -53,7 +53,7 @@
         <img src="<%=require('./images/close.svg')%>" alt="" class="popup-profile__close">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="newProfile">
-            <input type="text" onkeyup="checkInputPopup()" name="profilename" class="popup__input popup__input_type_name-prof" placeholder="Имя" value="Plamenevskiy Nikita" autocomplete="off" minlength="2" maxlength="30" required/>        
+            <input type="text" onkeyup="checkInputPopup()" id="profilename" name="profilename" class="popup__input popup__input_type_name-prof" placeholder="Имя" value="Plamenevskiy Nikita" autocomplete="off" minlength="2" maxlength="30" required/>        
             <div class="popup__error popup__error_name"></div>
             <input type="text" onkeyup="checkInputPopup()" name="about" class="popup__input popup__input_type_about" placeholder="О себе" value="Junior Front-end" autocomplete="off" minlength="2" maxlength="30" required/>
             <div class="popup__error popup__error_about"></div>
@@ -63,19 +63,7 @@
     </div>
     
   </div>
-    <script src='/src/modules/addUserInfo.js'></script> 
-    <script src='/src/modules/Popup.js'></script> 
-    <script src="/src/modules/CardList.js"></script> 
-    <script src='/src/modules/checkValidity.js'></script> 
-    <script type='module' src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-    <script src='/src/modules/script.js'></script> 
-    <script src='/src/modules/api.js'></script> 
-    <script src="/src/modules/takeUserInfo.js"></script> 
-    <script src='/src/modules/checkInputPopup.js'></script> 
-    <script src='/src/modules/Card.js'></script> 
-    <script src='/src/modules/initialCards.js'></script> 
-    
-    
+     <script type='module' src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>          
 </body>
 </html>
 

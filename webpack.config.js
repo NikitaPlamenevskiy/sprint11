@@ -51,13 +51,13 @@ module.exports = {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
-                    name: './vendor/[name].[ext]'
+                    name: './vendor/[name].[ext]',
                 }
             }
         ]
     },
     plugins: [  
-        new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+        new MiniCssExtractPlugin({filename: 'index.[contenthash].css'}),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),

@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
   constructor(options) {
     this.options = options;
     this.baseUrl = options.baseUrl;
@@ -50,10 +50,3 @@ class Api {
     .catch(error => alert(error)); 
   }
 }
-const api = new Api({
-  baseUrl: 'http://95.216.175.5/cohort6',
-  headers: {
-    authorization: 'd62d602b-5f71-4311-9b90-7e71c5c1406e',
-    'Content-Type': 'application/json'
-  }
-});
