@@ -14,7 +14,7 @@ https://nikitaplamenevskiy.github.io/sprint11/
 
 1. Клонирутей проект по ссылке 
 
-    https://github.com/NikitaPlamenevskiy/sprint11.git
+    git clone https://github.com/NikitaPlamenevskiy/sprint11.git
     
 2. Установка зависимости 
 
