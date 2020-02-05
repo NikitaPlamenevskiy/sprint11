@@ -8,3 +8,14 @@
 #### Демо сайта: 
 
 https://nikitaplamenevskiy.github.io/sprint11/
+
+
+#### Инструкция по установке проекта:
+
+1. Клонирутей проект по ссылке 
+
+    https://github.com/NikitaPlamenevskiy/sprint11.git
+    
+2. Установка зависимости 
+
+    npm i
