@@ -6,11 +6,11 @@ export default function checkValidity(event) {
     const errorAbout = document.querySelector('.popup__error_about');
 
     if (profilename.value.length === 0) {
-    errorName.textContent = 'Это обязательное поле';
+        errorName.textContent = 'Это обязательное поле';
     } else if (profilename.value.length < 2) {
-    errorName.textContent = 'Должно быть от 2 до 30 символов';
+        errorName.textContent = 'Должно быть от 2 до 30 символов';
     } else {
-    errorName.textContent = null;
+        errorName.textContent = null;
     }
 
     if (about.value.length === 0) {
