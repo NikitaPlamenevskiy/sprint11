@@ -41,8 +41,8 @@
         <img src="./images/close.svg" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="newCard">
-            <input type="text" onkeyup="checkInputPopup()" name="name" class="popup__input popup__input_type_name" placeholder="Название">
-            <input type="text" onkeyup="checkInputPopup()"  name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
+            <input type="text" onkeyup="checkInputPopup" name="name" class="popup__input popup__input_type_name" placeholder="Название">
+            <input type="text" onkeyup="checkInputPopup"  name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
             <button type="submit" class="button popup__button" disabled>+</button>
         </form>
       </div>
@@ -53,9 +53,9 @@
         <img src="./images/close.svg" alt="" class="popup-profile__close">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="newProfile">
-            <input type="text" onkeyup="checkInputPopup()" id="profilename" name="profilename" class="popup__input popup__input_type_name-prof" placeholder="Имя" value="Plamenevskiy Nikita" autocomplete="off" minlength="2" maxlength="30" required/>        
+            <input type="text" onkeyup="checkInputPopup" name="profilename" class="popup__input popup__input_type_name-prof" placeholder="Имя" value="Plamenevskiy Nikita" autocomplete="off" minlength="2" maxlength="30" required/>        
             <div class="popup__error popup__error_name"></div>
-            <input type="text" onkeyup="checkInputPopup()" name="about" class="popup__input popup__input_type_about" placeholder="О себе" value="Junior Front-end" autocomplete="off" minlength="2" maxlength="30" required/>
+            <input type="text" onkeyup="checkInputPopup" name="about" class="popup__input popup__input_type_about" placeholder="О себе" value="Junior Front-end" autocomplete="off" minlength="2" maxlength="30" required/>
             <div class="popup__error popup__error_about"></div>
             <button type="submit" class="popup-profile__button" disabled>Сохранить</button>
         </form>
