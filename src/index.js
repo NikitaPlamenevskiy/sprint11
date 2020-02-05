@@ -1,8 +1,8 @@
 import "./pages/index.css";
 import {Card, CardList, placesList} from "./modules/Card.js";
 import Popup from "./modules/Popup.js";
-import checkValidity from "./modules/checkValidity.js";
 import checkInputPopup from "./modules/checkInputPopup.js";
+import checkValidity from "./modules/checkValidity.js";
 import Api from "./modules/api.js";
 
 
@@ -14,8 +14,6 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
-
-
 
 const popUpButton = document.querySelector('.button');
 const editButton = document.querySelector('.edit-button');
@@ -36,24 +34,31 @@ const cardLink = cardForm.elements.link;
 const cardName = cardForm.elements.name;
 const profileName = profileForm.elements.profilename;
 const about = profileForm.elements.about;
+
+const photoname = cardForm.elements.photoname;
+const photolink = cardForm.elements.photolink;
+
+profileForm.addEventListener('input', checkInputPopup);
 const popup = new Popup(popUp);
 const popupProf = new Popup(popupProfile);
 const popupImg = new Popup(popupImage);
 const cardList = new CardList(placesList);
 
 
-
-profileForm.addEventListener('submit', addUserInfo);
-profileForm.addEventListener('input', checkValidity);
-
 cardForm.addEventListener('submit', function (event) {
   event.preventDefault();
-
-cardList.addCard(cardForm.elements.link.value, cardForm.elements.name.value);
+  cardList.addCard(cardForm.elements.link.value, cardForm.elements.name.value);
 
   cardForm.reset();
   popup.close();
 });
+
+
+profileForm.addEventListener('submit', addUserInfo);
+profileForm.addEventListener('input', checkValidity);
+
+
+
 
 editButton.addEventListener('click', function () {
   popupProf.open();
@@ -71,14 +76,6 @@ popUpClose.addEventListener('click', function () {
   popup.close();
 });
 
-popUpCloseImg.addEventListener('click', function () {
-  popupImg.close();
-});
-
-cardImg.forEach(function (cardImg) {
-  cardImg.addEventListener('click', (event) =>
-    popupImg.open(popupImageContent.src = cardImg.style.backgroundImage.slice(5, -2)))
-});
 
 function takeUserInfo(){
   api.getUserInfo().then((res) =>{

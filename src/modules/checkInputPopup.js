@@ -5,8 +5,9 @@ export default function checkInputPopup(){
     const about = profileForm.elements.about;
     const name = cardForm.elements.name;
     const link = cardForm.elements.link;
-    const popupBtn = document.querySelector('.popup__button');
+  
     const profileBtn = document.querySelector('.popup-profile__button');
+    const popupBtn = document.querySelector('.popup__button');
 
     if (profileName.value === '' || profileName.value.length < 2 || about.value === '' || about.value.length < 2) {
     profileBtn.setAttribute('disabled', 'disabled');
@@ -15,7 +16,7 @@ export default function checkInputPopup(){
     profileBtn.removeAttribute('disabled');
     profileBtn.classList.add('button_enabled');
     }
-
+    
     if (name.value === '' || link.value === '') {
     popupBtn.setAttribute('disabled', 'disabled');
     popupBtn.classList.remove('button_enabled-card');
@@ -24,5 +25,3 @@ export default function checkInputPopup(){
     popupBtn.classList.add('button_enabled-card');
     }
 }
-
-checkInputPopup();
