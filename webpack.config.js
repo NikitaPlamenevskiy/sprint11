@@ -8,14 +8,15 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
-    entry: { main: './src/index.js' },
+    entry: {
+        main: './src/index.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js'
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -23,17 +24,16 @@ module.exports = {
                 }
             },
             {
-                    test: /\.css$/i,
-                    use: [
-                        (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                        'css-loader', 
-                        'postcss-loader'
-                    ]
+                test: /\.css$/i,
+                use: [
+                    (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+                    'css-loader',
+                    'postcss-loader'
+                ]
             },
             {
                 test: /\.(png|jpg|gif|ico|svg)$/,
-                use: [
-                    {
+                use: [{
                         loader: 'file-loader',
                         options: {
                             name: './images/[name].[ext]',
@@ -42,8 +42,7 @@ module.exports = {
                     },
                     {
                         loader: "image-webpack-loader",
-                        options: {
-                        }
+                        options: {}
                     }
                 ]
             },
@@ -56,14 +55,16 @@ module.exports = {
             }
         ]
     },
-    plugins: [  
-        new MiniCssExtractPlugin({filename: 'index.[contenthash].css'}),
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'index.[contenthash].css'
+        }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorPluginOptions: {
-                            preset: ['default'],
-                        },
+                preset: ['default'],
+            },
             canPrint: true
         }),
         new HtmlWebpackPlugin({
@@ -72,8 +73,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new WebpackMd5Hash(),
-              new webpack.DefinePlugin({
-            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)    
+        new webpack.DefinePlugin({
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ]
 };

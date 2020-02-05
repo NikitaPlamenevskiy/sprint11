@@ -2,8 +2,8 @@
   "name": "sprint11",
   "homepage": "https://github.com/NikitaPlamenevskiy/sprint11",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Проектная работа 11",
+  "main": "main.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/NikitaPlamenevskiy/sprint11.git"
   },
-  "author": "",
+  "author": "Plamenevskiy Nikita",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NikitaPlamenevskiy/sprint11/issues"
@@ -37,11 +37,11 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.2",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-md5-hash": "0.0.6",
+    "image-webpack-loader": "^6.0.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1",
-    "image-webpack-loader": "^6.0.0"
+    "core-js": "^3.4.1"
   }
 }
