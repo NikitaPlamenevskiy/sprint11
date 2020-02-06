@@ -92,9 +92,8 @@ popupImg.close();
 });
 //Открытие картинки по клику
 placesList.addEventListener('click', (event) => {
-if (event.target.matches('.place-card__image')) {
-popupImg.open(popupImageContent.src = placesList.src);
-}
+    if (event.target.matches('.place-card__image')) {
+    popupImg.open(popupImageContent.src = cardImg.style.backgroundImage.slice(5, -2))}
 });
 
 //Функции с API

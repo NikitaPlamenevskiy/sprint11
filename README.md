@@ -12,7 +12,7 @@ https://nikitaplamenevskiy.github.io/sprint11/
 
 #### Инструкция по установке проекта:
 
-1. Клонирутей проект по ссылке 
+1. Клонируйте проект по ссылке 
 
     git clone https://github.com/NikitaPlamenevskiy/sprint11.git
     
