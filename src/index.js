@@ -4,7 +4,7 @@ import Popup from "./modules/Popup.js";
 import checkInputPopup from "./modules/checkInputPopup.js";
 import checkValidity from "./modules/checkValidity.js";
 import Api from "./modules/api.js";
-
+import popUpImage from "./modules/popUpImage.js"
 
 
 const api = new Api({
@@ -19,14 +19,25 @@ const popUpButton = document.querySelector('.button');
 const editButton = document.querySelector('.edit-button');
 const popUp = document.querySelector('.popup');
 const popupProfile = document.querySelector('.popup-profile');
-const popupImage = document.querySelector('.popup-image');
+
+
+//закрытие попапов 
 const popUpClose = document.querySelector('.popup__close');
 const popUpCloseProfile = document.querySelector('.popup-profile__close');
 const popUpCloseImg = document.querySelector('.popup-image__close');
-const popupImageContent = document.querySelector('.popup-image__content');
+
+//картинка с класса Card
 const cardImg = document.querySelectorAll('.place-card__image');
 const userName = document.querySelector('.user-info__name');
 const userJob = document.querySelector('.user-info__job');
+
+
+//попап картинки
+const popupImage = document.querySelector('.popup-image');
+//блок одной карточки
+const popupImageContent = document.querySelector('.popup-image__content');
+
+
 
 const cardForm = document.forms.newCard;
 const profileForm = document.forms.newProfile;
@@ -41,8 +52,9 @@ const photolink = cardForm.elements.photolink;
 profileForm.addEventListener('input', checkInputPopup);
 const popup = new Popup(popUp);
 const popupProf = new Popup(popupProfile);
-const popupImg = new Popup(popupImage);
 const cardList = new CardList(placesList);
+//попап картинки
+const popupImg = new popUpImage(popupImage);
 
 
 cardForm.addEventListener('submit', function (event) {
@@ -53,11 +65,9 @@ cardForm.addEventListener('submit', function (event) {
   popup.close();
 });
 
-
+//Listeners 
 profileForm.addEventListener('submit', addUserInfo);
 profileForm.addEventListener('input', checkValidity);
-
-
 
 
 editButton.addEventListener('click', function () {
@@ -76,7 +86,20 @@ popUpClose.addEventListener('click', function () {
   popup.close();
 });
 
+//Закрытие картинки по клику
+popUpCloseImg.addEventListener('click', function () {
+popupImg.close();
+});
+//Открытие картинки по клику
+placesList.addEventListener('click', (event) => {
+if (event.target.matches('.place-card__image')) {
+popupImg.open(popupImageContent.src = placesList.src);
+}
+});
 
+//Функции с API
+
+//Получение имени пользователя 
 function takeUserInfo(){
   api.getUserInfo().then((res) =>{
       userName.textContent = res.name; 
@@ -91,7 +114,7 @@ function initialCards(){
         cardList.render(cards)
     })
 };
-
+//Добавление информации пользователя 
 function addUserInfo(event) {
   event.preventDefault();
   api.sendUserInfo(profileName, about)
